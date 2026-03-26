@@ -195,10 +195,12 @@ impl Locale {
         let abs = n.abs();
 
         // Round to the requested precision before splitting.
-        let factor = 10f64.powi(decimals as i32);
+        let factor = 10f64.powi(i32::from(decimals));
         let rounded = (abs * factor).round() / factor;
 
+        #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
         let int_part = rounded.trunc() as u64;
+        #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
         let frac_part = ((rounded.fract() * factor).round()) as u64;
 
         let int_str = group_digits(int_part, self.thousands_sep);
@@ -245,6 +247,7 @@ impl Locale {
         const GB: u64 = 1_024 * MB;
         const TB: u64 = 1_024 * GB;
 
+        #[allow(clippy::cast_precision_loss)]
         if bytes >= TB {
             format!("{} TB", self.fmt_float(bytes as f64 / TB as f64, 1))
         } else if bytes >= GB {
@@ -254,7 +257,7 @@ impl Locale {
         } else if bytes >= KB {
             format!("{} KB", self.fmt_float(bytes as f64 / KB as f64, 1))
         } else {
-            format!("{} B", bytes)
+            format!("{bytes} B")
         }
     }
 
@@ -271,12 +274,12 @@ impl Locale {
     /// ```
     pub fn fmt_date(&self, year: i32, month: u8, day: u8) -> String {
         match self.date_fmt {
-            DateFmt::MdY => format!("{:02}/{:02}/{}", month, day, year),
-            DateFmt::DmY => format!("{:02}/{:02}/{}", day, month, year),
-            DateFmt::DotDmY => format!("{:02}.{:02}.{}", day, month, year),
-            DateFmt::Iso => format!("{}-{:02}-{:02}", year, month, day),
-            DateFmt::CjkYmd => format!("{}年{:02}月{:02}日", year, month, day),
-            DateFmt::KoreanYmd => format!("{}년 {:02}월 {:02}일", year, month, day),
+            DateFmt::MdY => format!("{month:02}/{day:02}/{year}"),
+            DateFmt::DmY => format!("{day:02}/{month:02}/{year}"),
+            DateFmt::DotDmY => format!("{day:02}.{month:02}.{year}"),
+            DateFmt::Iso => format!("{year}-{month:02}-{day:02}"),
+            DateFmt::CjkYmd => format!("{year}年{month:02}月{day:02}日"),
+            DateFmt::KoreanYmd => format!("{year}년 {month:02}월 {day:02}일"),
         }
     }
 
@@ -293,7 +296,7 @@ impl Locale {
     /// ```
     pub fn fmt_time(&self, hour: u8, minute: u8, _second: u8) -> String {
         match self.time_fmt {
-            TimeFmt::H24 => format!("{:02}:{:02}", hour, minute),
+            TimeFmt::H24 => format!("{hour:02}:{minute:02}"),
             TimeFmt::H12 => {
                 let (h12, suffix) = if hour == 0 {
                     (12u8, "AM")
@@ -304,7 +307,7 @@ impl Locale {
                 } else {
                     (hour - 12, "PM")
                 };
-                format!("{}:{:02} {}", h12, minute, suffix)
+                format!("{h12}:{minute:02} {suffix}")
             }
         }
     }

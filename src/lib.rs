@@ -1,3 +1,8 @@
+#![deny(clippy::all, clippy::pedantic)]
+#![deny(warnings)]
+#![allow(clippy::missing_errors_doc)]
+#![allow(clippy::must_use_candidate)]
+#![allow(clippy::doc_markdown)]
 //! Fluent-based i18n for FreeSynergy.
 //!
 //! Loads `.ftl` translation files from `locales/{lang}/` directories.
@@ -199,8 +204,7 @@ pub fn init_with_toml_strs(active_lang: &str, locales: &[(&str, &str)]) -> Resul
         .iter()
         .find(|(lang, _)| *lang == "en")
         .or_else(|| locales.first())
-        .map(|(lang, _)| *lang)
-        .unwrap_or("en");
+        .map_or("en", |(lang, _)| *lang);
 
     let mut instance = I18n::new(active_lang, fallback);
     for (lang, toml_src) in locales {

@@ -43,7 +43,7 @@ use crate::languages::{all_languages, LanguageMeta};
 /// - If two providers return the same `code`, the first registered wins.
 pub trait LanguageProvider: Send + Sync {
     /// Unique provider name, e.g. `"builtin"`, `"community-pack"`.
-    fn name(&self) -> &str;
+    fn name(&self) -> &'static str;
 
     /// All language entries this provider contributes.
     fn languages(&self) -> Vec<LanguageMeta>;
@@ -57,7 +57,7 @@ pub trait LanguageProvider: Send + Sync {
 pub struct BuiltinLanguageProvider;
 
 impl LanguageProvider for BuiltinLanguageProvider {
-    fn name(&self) -> &str {
+    fn name(&self) -> &'static str {
         "builtin"
     }
 
@@ -183,7 +183,7 @@ mod tests {
     fn custom_provider_adds_language() {
         struct TestProvider;
         impl LanguageProvider for TestProvider {
-            fn name(&self) -> &str {
+            fn name(&self) -> &'static str {
                 "test"
             }
             fn languages(&self) -> Vec<LanguageMeta> {
@@ -211,7 +211,7 @@ mod tests {
     fn builtin_wins_over_duplicate_code() {
         struct OverrideProvider;
         impl LanguageProvider for OverrideProvider {
-            fn name(&self) -> &str {
+            fn name(&self) -> &'static str {
                 "override"
             }
             fn languages(&self) -> Vec<LanguageMeta> {
@@ -239,7 +239,7 @@ mod tests {
     fn duplicate_provider_name_is_ignored() {
         struct DupeProvider;
         impl LanguageProvider for DupeProvider {
-            fn name(&self) -> &str {
+            fn name(&self) -> &'static str {
                 "builtin"
             } // same name as BuiltinLanguageProvider
             fn languages(&self) -> Vec<LanguageMeta> {
