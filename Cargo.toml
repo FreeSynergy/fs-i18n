@@ -1,0 +1,22 @@
+[package]
+name        = "fs-i18n"
+description = "Fluent-based i18n system for FreeSynergy"
+version     = "0.1.0"
+edition     = "2021"
+license     = "MIT"
+authors     = ["FreeSynergy.Net"]
+repository  = "https://github.com/FreeSynergy/fs-i18n"
+
+[features]
+dioxus = ["dep:dioxus-core"]
+
+[dependencies]
+fs-error      = { path = "../fs-libs/fs-error" }
+fluent-bundle = { version = "0.16" }
+unic-langid   = { version = "0.9", features = ["macros"] }
+toml          = { version = "1", features = ["preserve_order"] }
+serde         = { version = "1", features = ["derive"] }
+
+[dependencies.dioxus-core]
+version  = "0.7"
+optional = true
