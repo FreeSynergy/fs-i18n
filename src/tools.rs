@@ -125,6 +125,7 @@ mod tests {
     struct TestPlugin;
 
     impl SnippetPlugin for TestPlugin {
+        #[allow(clippy::unnecessary_literal_bound)]
         fn name(&self) -> &str {
             "test-plugin"
         }
