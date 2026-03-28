@@ -236,3 +236,138 @@ phrase-operation-failed = Vorgang fehlgeschlagen: { $reason }
 phrase-are-you-sure = Bist du sicher?
 phrase-cannot-be-undone = Diese Aktion kann nicht rückgängig gemacht werden.
 phrase-leave-without-saving = Ohne Speichern verlassen?
+
+# ── Nouns ───────────────────────────────────────────────────────────────────
+
+noun-host = Host
+noun-project = Projekt
+noun-service = Dienst
+noun-module = Modul
+noun-plugin = Plugin
+noun-user = Benutzer
+noun-domain = Domain
+noun-backup = Backup
+noun-config = Konfiguration
+noun-log = Protokoll
+noun-key = Schlüssel
+noun-secret = Geheimnis
+noun-certificate = Zertifikat
+noun-network = Netzwerk
+noun-container = Container
+noun-volume = Volume
+noun-port = Port
+noun-proxy = Proxy
+noun-database = Datenbank
+noun-cache = Cache
+noun-queue = Warteschlange
+noun-event = Ereignis
+noun-bot = Bot
+noun-channel = Kanal
+noun-theme = Theme
+noun-language = Sprache
+noun-role = Rolle
+noun-permission = Berechtigung
+noun-token = Token
+noun-session = Sitzung
+noun-version = Version
+noun-tag = Tag
+noun-name = Name
+noun-description = Beschreibung
+noun-category = Kategorie
+noun-author = Autor
+noun-license = Lizenz
+
+# ── Time ────────────────────────────────────────────────────────────────────
+
+time-now = Gerade eben
+time-never = Nie
+time-today = Heute
+time-yesterday = Gestern
+time-tomorrow = Morgen
+time-seconds-ago = vor { $n }s
+time-minutes-ago = vor { $n }m
+time-hours-ago = vor { $n }h
+time-days-ago = vor { $n }d
+time-in-seconds = in { $n }s
+time-in-minutes = in { $n }m
+time-in-hours = in { $n }h
+time-in-days = in { $n }d
+time-last-seen = Zuletzt gesehen { $when }
+time-created-at = Erstellt { $when }
+time-updated-at = Aktualisiert { $when }
+time-expires-at = Läuft ab { $when }
+time-uptime = Laufzeit: { $duration }
+
+# ── Validation ──────────────────────────────────────────────────────────────
+
+validation-required = { $field } ist erforderlich.
+validation-too-short = { $field } muss mindestens { $min } Zeichen lang sein.
+validation-too-long = { $field } darf maximal { $max } Zeichen lang sein.
+validation-invalid-format = { $field } hat ein ungültiges Format.
+validation-already-exists = { $field } existiert bereits.
+validation-not-available = { $field } ist nicht verfügbar.
+validation-must-be-unique = { $field } muss eindeutig sein.
+validation-invalid-email = Bitte gib eine gültige E-Mail-Adresse ein.
+validation-invalid-url = Bitte gib eine gültige URL ein.
+validation-invalid-domain = Bitte gib einen gültigen Domainnamen ein.
+validation-invalid-port = Port muss eine Zahl zwischen 1 und 65535 sein.
+validation-invalid-version = Bitte gib eine gültige Version ein (z.B. 1.0.0).
+validation-no-special-chars = { $field } darf keine Sonderzeichen enthalten.
+validation-only-alphanumeric = { $field } darf nur Buchstaben und Zahlen enthalten.
+validation-passwords-mismatch = Passwörter stimmen nicht überein.
+
+# ── Confirmations ───────────────────────────────────────────────────────────
+
+confirmation-delete = Löschen? Diese Aktion kann nicht rückgängig gemacht werden.
+confirmation-restart = Neu starten?
+confirmation-deploy = Deployen?
+confirmation-logout = Abmelden?
+confirmation-unsaved-changes = Ungespeicherte Änderungen vorhanden. Trotzdem verlassen?
+confirmation-overwrite = Existiert bereits. Überschreiben?
+confirmation-reset = Alle Einstellungen auf Standard zurücksetzen?
+confirmation-remove-plugin = Plugin entfernen? Alle Daten gehen verloren.
+confirmation-wipe-data = Alle Daten löschen? Diese Aktion kann nicht rückgängig gemacht werden.
+confirmation-stop = Stoppen?
+confirmation-cancel-op = Vorgang abbrechen?
+confirmation-apply = Änderungen übernehmen?
+confirmation-import = Importieren und vorhandene Daten überschreiben?
+confirmation-sync = Jetzt synchronisieren?
+confirmation-generate-secret = Neues Secret generieren? Das alte Secret geht verloren.
+
+# ── Notifications ───────────────────────────────────────────────────────────
+
+notification-saved = Gespeichert.
+notification-deleted = Gelöscht.
+notification-updated = Aktualisiert.
+notification-installed = Installiert.
+notification-uninstalled = Deinstalliert.
+notification-deployed = Deployed.
+notification-started = Gestartet.
+notification-stopped = Gestoppt.
+notification-restarted = Neugestartet.
+notification-copied = In Zwischenablage kopiert.
+notification-connection-restored = Verbindung wiederhergestellt.
+notification-sync-completed = Synchronisierung abgeschlossen.
+notification-import-completed = Import abgeschlossen.
+notification-export-completed = Export abgeschlossen.
+notification-changes-discarded = Änderungen verworfen.
+notification-secret-generated = Neues Secret generiert.
+notification-backup-created = Backup erstellt.
+
+# ── Help ────────────────────────────────────────────────────────────────────
+
+help-press-key = { $key } drücken
+help-press-to-action = { $key } drücken, um { $action }
+help-navigate = Mit Pfeiltasten navigieren
+help-navigate-tabs = Tabs wechseln mit Strg+← / Strg+→
+help-submit = Speichern mit Strg+S
+help-cancel-action = Abbrechen mit Esc
+help-open-help = F1 für Hilfe drücken
+help-search-hint = Zum Suchen tippen...
+help-no-results = Keine Ergebnisse für "{ $query }"
+help-more-info = Weitere Informationen
+help-see-docs = Dokumentation ansehen
+help-example = Beispiel: { $example }
+help-tip = Tipp: { $tip }
+help-note = Hinweis: { $note }
+help-warning = Warnung: { $warning }

@@ -236,3 +236,138 @@ phrase-operation-failed = Operation failed: { $reason }
 phrase-are-you-sure = Are you sure?
 phrase-cannot-be-undone = This action cannot be undone.
 phrase-leave-without-saving = Leave without saving changes?
+
+# ── Nouns ───────────────────────────────────────────────────────────────────
+
+noun-host = Host
+noun-project = Project
+noun-service = Service
+noun-module = Module
+noun-plugin = Plugin
+noun-user = User
+noun-domain = Domain
+noun-backup = Backup
+noun-config = Config
+noun-log = Log
+noun-key = Key
+noun-secret = Secret
+noun-certificate = Certificate
+noun-network = Network
+noun-container = Container
+noun-volume = Volume
+noun-port = Port
+noun-proxy = Proxy
+noun-database = Database
+noun-cache = Cache
+noun-queue = Queue
+noun-event = Event
+noun-bot = Bot
+noun-channel = Channel
+noun-theme = Theme
+noun-language = Language
+noun-role = Role
+noun-permission = Permission
+noun-token = Token
+noun-session = Session
+noun-version = Version
+noun-tag = Tag
+noun-name = Name
+noun-description = Description
+noun-category = Category
+noun-author = Author
+noun-license = License
+
+# ── Time ────────────────────────────────────────────────────────────────────
+
+time-now = Just now
+time-never = Never
+time-today = Today
+time-yesterday = Yesterday
+time-tomorrow = Tomorrow
+time-seconds-ago = { $n }s ago
+time-minutes-ago = { $n }m ago
+time-hours-ago = { $n }h ago
+time-days-ago = { $n }d ago
+time-in-seconds = in { $n }s
+time-in-minutes = in { $n }m
+time-in-hours = in { $n }h
+time-in-days = in { $n }d
+time-last-seen = Last seen { $when }
+time-created-at = Created { $when }
+time-updated-at = Updated { $when }
+time-expires-at = Expires { $when }
+time-uptime = Uptime: { $duration }
+
+# ── Validation ──────────────────────────────────────────────────────────────
+
+validation-required = { $field } is required.
+validation-too-short = { $field } must be at least { $min } characters.
+validation-too-long = { $field } must be at most { $max } characters.
+validation-invalid-format = { $field } has an invalid format.
+validation-already-exists = { $field } already exists.
+validation-not-available = { $field } is not available.
+validation-must-be-unique = { $field } must be unique.
+validation-invalid-email = Please enter a valid email address.
+validation-invalid-url = Please enter a valid URL.
+validation-invalid-domain = Please enter a valid domain name.
+validation-invalid-port = Port must be a number between 1 and 65535.
+validation-invalid-version = Please enter a valid version (e.g. 1.0.0).
+validation-no-special-chars = { $field } must not contain special characters.
+validation-only-alphanumeric = { $field } may only contain letters and numbers.
+validation-passwords-mismatch = Passwords do not match.
+
+# ── Confirmations ───────────────────────────────────────────────────────────
+
+confirmation-delete = Delete? This cannot be undone.
+confirmation-restart = Restart?
+confirmation-deploy = Deploy?
+confirmation-logout = Log out?
+confirmation-unsaved-changes = You have unsaved changes. Leave anyway?
+confirmation-overwrite = Already exists. Overwrite?
+confirmation-reset = Reset all settings to defaults?
+confirmation-remove-plugin = Remove plugin? All data will be lost.
+confirmation-wipe-data = Wipe all data? This cannot be undone.
+confirmation-stop = Stop?
+confirmation-cancel-op = Cancel operation?
+confirmation-apply = Apply changes?
+confirmation-import = Import and overwrite existing data?
+confirmation-sync = Sync now?
+confirmation-generate-secret = Generate new secret? Old secret will be lost.
+
+# ── Notifications ───────────────────────────────────────────────────────────
+
+notification-saved = Saved.
+notification-deleted = Deleted.
+notification-updated = Updated.
+notification-installed = Installed.
+notification-uninstalled = Uninstalled.
+notification-deployed = Deployed.
+notification-started = Started.
+notification-stopped = Stopped.
+notification-restarted = Restarted.
+notification-copied = Copied to clipboard.
+notification-connection-restored = Connection restored.
+notification-sync-completed = Sync completed.
+notification-import-completed = Import completed.
+notification-export-completed = Export completed.
+notification-changes-discarded = Changes discarded.
+notification-secret-generated = New secret generated.
+notification-backup-created = Backup created.
+
+# ── Help ────────────────────────────────────────────────────────────────────
+
+help-press-key = Press { $key }
+help-press-to-action = Press { $key } to { $action }
+help-navigate = Navigate with arrow keys
+help-navigate-tabs = Switch tabs with Ctrl+← / Ctrl+→
+help-submit = Submit with Ctrl+S
+help-cancel-action = Cancel with Esc
+help-open-help = Press F1 for help
+help-search-hint = Type to search...
+help-no-results = No results for "{ $query }"
+help-more-info = More information
+help-see-docs = See documentation
+help-example = Example: { $example }
+help-tip = Tip: { $tip }
+help-note = Note: { $note }
+help-warning = Warning: { $warning }

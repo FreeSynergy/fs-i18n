@@ -59,12 +59,74 @@ macro_rules! locale_ftl {
     };
 }
 
+/// common.ftl for all 50 supported languages.
+///
+/// Generated from `snippets/{lang}/*.toml` by `tools/toml_to_ftl.py`.
+/// Contains all output-facing UI strings: actions, errors, labels, status,
+/// nouns, phrases, time, validation, confirmations, notifications, help.
+pub const BUILTIN_COMMON_LOCALES: &[(&str, &str)] = &[
+    locale_ftl!("am", "common.ftl"),
+    locale_ftl!("ar", "common.ftl"),
+    locale_ftl!("be", "common.ftl"),
+    locale_ftl!("bg", "common.ftl"),
+    locale_ftl!("bn", "common.ftl"),
+    locale_ftl!("cs", "common.ftl"),
+    locale_ftl!("da", "common.ftl"),
+    locale_ftl!("de", "common.ftl"),
+    locale_ftl!("el", "common.ftl"),
+    locale_ftl!("en", "common.ftl"),
+    locale_ftl!("es", "common.ftl"),
+    locale_ftl!("et", "common.ftl"),
+    locale_ftl!("fa", "common.ftl"),
+    locale_ftl!("fi", "common.ftl"),
+    locale_ftl!("fr", "common.ftl"),
+    locale_ftl!("ha", "common.ftl"),
+    locale_ftl!("hi", "common.ftl"),
+    locale_ftl!("hr", "common.ftl"),
+    locale_ftl!("hu", "common.ftl"),
+    locale_ftl!("id", "common.ftl"),
+    locale_ftl!("it", "common.ftl"),
+    locale_ftl!("ja", "common.ftl"),
+    locale_ftl!("jv", "common.ftl"),
+    locale_ftl!("ko", "common.ftl"),
+    locale_ftl!("lt", "common.ftl"),
+    locale_ftl!("lv", "common.ftl"),
+    locale_ftl!("mr", "common.ftl"),
+    locale_ftl!("nl", "common.ftl"),
+    locale_ftl!("no", "common.ftl"),
+    locale_ftl!("pa", "common.ftl"),
+    locale_ftl!("pl", "common.ftl"),
+    locale_ftl!("ps", "common.ftl"),
+    locale_ftl!("pt", "common.ftl"),
+    locale_ftl!("ro", "common.ftl"),
+    locale_ftl!("ru", "common.ftl"),
+    locale_ftl!("sk", "common.ftl"),
+    locale_ftl!("sl", "common.ftl"),
+    locale_ftl!("sq", "common.ftl"),
+    locale_ftl!("sr", "common.ftl"),
+    locale_ftl!("sv", "common.ftl"),
+    locale_ftl!("sw", "common.ftl"),
+    locale_ftl!("ta", "common.ftl"),
+    locale_ftl!("te", "common.ftl"),
+    locale_ftl!("th", "common.ftl"),
+    locale_ftl!("tr", "common.ftl"),
+    locale_ftl!("uk", "common.ftl"),
+    locale_ftl!("ur", "common.ftl"),
+    locale_ftl!("vi", "common.ftl"),
+    locale_ftl!("yo", "common.ftl"),
+    locale_ftl!("yue", "common.ftl"),
+];
+
 /// All built-in FTL locale files as `(lang_code, ftl_source)` pairs.
 ///
-/// Programs: common, settings, store, browser, lenses, bots, container-app,
-/// managers, ai, auth, tasks, init, node, icons, theme-app.
+/// Includes common.ftl for all 50 languages plus program-specific FTL
+/// (settings, store, browser, lenses, bots, container-app, managers, ai,
+/// auth, tasks, init, node, icons, theme-app) for en and de.
 pub const BUILTIN_LOCALES: &[(&str, &str)] = &[
-    // common — reusable error/action/label/status/phrase keys
+    // common — all 50 languages (actions, errors, labels, status, nouns,
+    //           phrases, time, validation, confirmations, notifications, help)
+    // Note: en and de common.ftl are also included in BUILTIN_COMMON_LOCALES
+    // but listed first here so they load before program-specific files.
     locale_ftl!("en", "common.ftl"),
     locale_ftl!("de", "common.ftl"),
     // settings
@@ -176,17 +238,26 @@ pub fn builtin_i18n(active_lang: &str) -> Result<I18n, FsError> {
 /// assert_eq!(i18n.t("settings-title"), "Settings");
 /// ```
 pub fn load_builtin_locales(i18n: &mut I18n) -> Result<(), FsError> {
-    // Group FTL sources by language and load each group as a bundle.
+    // Merge BUILTIN_COMMON_LOCALES (all 50 languages) with BUILTIN_LOCALES
+    // (en/de program-specific files). Group by language and load each bundle.
+    let combined: Vec<(&str, &str)> = BUILTIN_COMMON_LOCALES
+        .iter()
+        .copied()
+        // Skip en/de common.ftl here — BUILTIN_LOCALES already starts with them
+        .filter(|(lang, _)| *lang != "en" && *lang != "de")
+        .chain(BUILTIN_LOCALES.iter().copied())
+        .collect();
+
     let langs: Vec<&str> = {
         let mut seen = std::collections::HashSet::new();
-        BUILTIN_LOCALES
+        combined
             .iter()
             .filter(|(lang, _)| seen.insert(*lang))
             .map(|(lang, _)| *lang)
             .collect()
     };
     for lang in langs {
-        let sources: Vec<String> = BUILTIN_LOCALES
+        let sources: Vec<String> = combined
             .iter()
             .filter(|(l, _)| *l == lang)
             .map(|(_, src)| src.to_string())
