@@ -8,6 +8,9 @@
 //
 // Keys follow the `"category.key"` convention after flattening:
 //   `actions.save`, `status.running`, `errors.not_found`, …
+//
+// FTL locales (settings, etc.) are embedded via `BUILTIN_LOCALES` and loaded
+// via [`load_builtin_locales`].
 
 use crate::i18n::I18n;
 use fs_error::FsError;
@@ -43,6 +46,69 @@ pub const BUILTIN_SNIPPETS: &[(&str, &str)] = &[
     snippet!("de", "time.toml"),
     snippet!("de", "validation.toml"),
     snippet!("de", "help.toml"),
+];
+
+// ── Embedded FTL locales ──────────────────────────────────────────────────────
+
+macro_rules! locale_ftl {
+    ($lang:literal, $file:literal) => {
+        (
+            $lang,
+            include_str!(concat!("../locales/", $lang, "/", $file)),
+        )
+    };
+}
+
+/// All built-in FTL locale files as `(lang_code, ftl_source)` pairs.
+///
+/// Programs: common, settings, store, browser, lenses, bots, container-app,
+/// managers, ai, auth, tasks, init, node, icons, theme-app.
+pub const BUILTIN_LOCALES: &[(&str, &str)] = &[
+    // common — reusable error/action/label/status/phrase keys
+    locale_ftl!("en", "common.ftl"),
+    locale_ftl!("de", "common.ftl"),
+    // settings
+    locale_ftl!("en", "settings.ftl"),
+    locale_ftl!("de", "settings.ftl"),
+    // store
+    locale_ftl!("en", "store.ftl"),
+    locale_ftl!("de", "store.ftl"),
+    // browser
+    locale_ftl!("en", "browser.ftl"),
+    locale_ftl!("de", "browser.ftl"),
+    // lenses
+    locale_ftl!("en", "lenses.ftl"),
+    locale_ftl!("de", "lenses.ftl"),
+    // bots
+    locale_ftl!("en", "bots.ftl"),
+    locale_ftl!("de", "bots.ftl"),
+    // container-app
+    locale_ftl!("en", "container-app.ftl"),
+    locale_ftl!("de", "container-app.ftl"),
+    // managers
+    locale_ftl!("en", "managers.ftl"),
+    locale_ftl!("de", "managers.ftl"),
+    // ai
+    locale_ftl!("en", "ai.ftl"),
+    locale_ftl!("de", "ai.ftl"),
+    // auth
+    locale_ftl!("en", "auth.ftl"),
+    locale_ftl!("de", "auth.ftl"),
+    // tasks
+    locale_ftl!("en", "tasks.ftl"),
+    locale_ftl!("de", "tasks.ftl"),
+    // init
+    locale_ftl!("en", "init.ftl"),
+    locale_ftl!("de", "init.ftl"),
+    // node
+    locale_ftl!("en", "node.ftl"),
+    locale_ftl!("de", "node.ftl"),
+    // icons
+    locale_ftl!("en", "icons.ftl"),
+    locale_ftl!("de", "icons.ftl"),
+    // theme-app
+    locale_ftl!("en", "theme-app.ftl"),
+    locale_ftl!("de", "theme-app.ftl"),
 ];
 
 // ── Public API ────────────────────────────────────────────────────────────────
@@ -86,7 +152,48 @@ pub fn load_builtins(i18n: &mut I18n) -> Result<(), FsError> {
 pub fn builtin_i18n(active_lang: &str) -> Result<I18n, FsError> {
     let mut i18n = I18n::new(active_lang, "en");
     load_builtins(&mut i18n)?;
+    load_builtin_locales(&mut i18n)?;
     Ok(i18n)
+}
+
+/// Load all built-in FTL locale files into an existing [`I18n`] instance.
+///
+/// Covers program-specific FTL translations (e.g. `settings-title`,
+/// `settings-desktop-title`). These use hyphen-separated keys and Fluent
+/// variable syntax (`{ $var }`).
+///
+/// Call this after [`load_builtins`] so that FTL translations can override
+/// TOML snippets for the same key if needed.
+///
+/// # Example
+///
+/// ```rust,ignore
+/// use fs_i18n::{I18n, snippets::{load_builtins, load_builtin_locales}};
+///
+/// let mut i18n = I18n::new("en", "en");
+/// load_builtins(&mut i18n).unwrap();
+/// load_builtin_locales(&mut i18n).unwrap();
+/// assert_eq!(i18n.t("settings-title"), "Settings");
+/// ```
+pub fn load_builtin_locales(i18n: &mut I18n) -> Result<(), FsError> {
+    // Group FTL sources by language and load each group as a bundle.
+    let langs: Vec<&str> = {
+        let mut seen = std::collections::HashSet::new();
+        BUILTIN_LOCALES
+            .iter()
+            .filter(|(lang, _)| seen.insert(*lang))
+            .map(|(lang, _)| *lang)
+            .collect()
+    };
+    for lang in langs {
+        let sources: Vec<String> = BUILTIN_LOCALES
+            .iter()
+            .filter(|(l, _)| *l == lang)
+            .map(|(_, src)| src.to_string())
+            .collect();
+        i18n.add_ftl(lang, &sources)?;
+    }
+    Ok(())
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────
@@ -250,5 +357,19 @@ mod tests {
         i2.add_toml_str("en", "[actions]\nsave = \"Persist\"\n")
             .unwrap();
         assert_eq!(i2.t("actions.save"), "Persist");
+    }
+
+    // ── FTL locales ───────────────────────────────────────────────────────────
+
+    #[test]
+    fn builtin_i18n_includes_settings_ftl_en() {
+        let i = en();
+        assert_eq!(i.t("settings-title"), "Settings");
+    }
+
+    #[test]
+    fn builtin_i18n_includes_settings_ftl_de() {
+        let i = de();
+        assert_eq!(i.t("settings-title"), "Einstellungen");
     }
 }

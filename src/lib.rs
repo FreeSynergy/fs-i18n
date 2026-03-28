@@ -37,6 +37,7 @@ pub use i18n::{I18n, LanguageCode, Translation};
 pub use languages::{all_languages, language_meta, LanguageMeta, TextDirection};
 pub use locale::{DateFmt, Locale, TimeFmt};
 pub use provider::{BuiltinLanguageProvider, LanguageProvider, LanguageRegistry};
+pub use snippets::load_builtin_locales;
 pub use tools::SnippetPlugin;
 
 use std::path::Path;
@@ -279,5 +280,119 @@ mod tests {
         let i = en_bundle("action-save = Save\n");
         assert!(i.has("action-save"));
         assert!(!i.has("nonexistent"));
+    }
+}
+
+#[cfg(test)]
+mod locales_tests {
+    use crate::I18n;
+    use std::path::Path;
+
+    #[test]
+    fn settings_ftl_loads_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales/en/settings.ftl must load");
+        assert_eq!(i18n.t("settings-title"), "Settings");
+    }
+
+    #[test]
+    fn settings_ftl_loads_de() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "de", "en")
+            .expect("locales/de/settings.ftl must load");
+        assert_eq!(i18n.t("settings-title"), "Einstellungen");
+    }
+
+    #[test]
+    fn common_ftl_error_keys_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("error-not-found"), "Not found");
+        assert_eq!(i18n.t("error-permission-denied"), "Permission denied");
+        assert_eq!(i18n.t("error-invalid-input"), "Invalid input");
+        assert_eq!(i18n.t("error-connection-failed"), "Connection failed");
+        assert_eq!(i18n.t("error-parse-failed"), "Parse error");
+    }
+
+    #[test]
+    fn common_ftl_error_keys_de() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "de", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("error-not-found"), "Nicht gefunden");
+        assert_eq!(i18n.t("error-permission-denied"), "Zugriff verweigert");
+        assert_eq!(i18n.t("error-invalid-input"), "Ungültige Eingabe");
+    }
+
+    #[test]
+    fn common_ftl_action_keys_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("action-save"), "Save");
+        assert_eq!(i18n.t("action-cancel"), "Cancel");
+        assert_eq!(i18n.t("action-install"), "Install");
+    }
+
+    #[test]
+    fn common_ftl_action_keys_de() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "de", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("action-save"), "Speichern");
+        assert_eq!(i18n.t("action-cancel"), "Abbrechen");
+        assert_eq!(i18n.t("action-install"), "Installieren");
+    }
+
+    #[test]
+    fn common_ftl_status_keys_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("status-running"), "Running");
+        assert_eq!(i18n.t("status-stopped"), "Stopped");
+        assert_eq!(i18n.t("status-installed"), "Installed");
+    }
+
+    #[test]
+    fn store_ftl_loads_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("store-title"), "Store");
+        assert_eq!(i18n.t("store-search-placeholder"), "Search packages…");
+    }
+
+    #[test]
+    fn store_ftl_loads_de() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "de", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("store-title"), "Store");
+        assert_eq!(i18n.t("store-search-placeholder"), "Pakete suchen…");
+    }
+
+    #[test]
+    fn browser_ftl_loads_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("browser-title"), "FreeSynergy Browser");
+        assert_eq!(i18n.t("browser-new-tab"), "New Tab");
+    }
+
+    #[test]
+    fn auth_ftl_loads_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("auth-username-placeholder"), "Username");
+        assert_eq!(i18n.t("auth-btn-login"), "Log In");
+    }
+
+    #[test]
+    fn managers_ftl_loads_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("managers-title"), "Managers");
+    }
+
+    #[test]
+    fn ai_ftl_loads_en() {
+        let i18n = I18n::load_dir_with_lang(Path::new("locales"), "en", "en")
+            .expect("locales must load");
+        assert_eq!(i18n.t("ai-title"), "AI");
+        assert_eq!(i18n.t("ai-mistral-title"), "Mistral.rs");
     }
 }
