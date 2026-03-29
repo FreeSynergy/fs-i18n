@@ -20,3 +20,15 @@ registry-error-capability-not-found = Kein Service für Fähigkeit { $capability
 
 registry-info-registered = Service { $name } für Fähigkeit { $capability } registriert.
 registry-info-unregistered = Service { $name } abgemeldet.
+registry-info-server-started = Registry-Daemon gestartet (gRPC: { $grpc }, REST: { $rest }).
+
+# CLI
+registry-cli-listing-header = ID                             ENDPUNKT                  STATUS   REGISTRIERT
+registry-cli-no-services = Keine Services registriert.
+registry-cli-endpoint-found = Aktiver Endpunkt für „{ $capability }": { $endpoint }
+registry-cli-endpoint-not-found = Kein aktiver Endpunkt für Fähigkeit „{ $capability }".
+
+# Laufzeitfehler
+registry-error-database = Datenbankfehler: { $reason }
+registry-error-not-found = Eintrag nicht gefunden: { $id }
+registry-error-json = Serialisierungsfehler: { $reason }
