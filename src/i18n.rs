@@ -336,6 +336,66 @@ impl I18n {
         Translation::new(key.to_string())
     }
 
+    /// Translate a key for an explicit `lang` without changing the active language.
+    ///
+    /// Fallback chain: `lang` Fluent → `lang` TOML → fallback Fluent → fallback TOML → raw key.
+    pub fn t_lang(&self, key: &str, lang: &str) -> Translation {
+        if let Some(v) = self.bundles.get(lang).and_then(|b| b.get(key)) {
+            return Translation::new(v);
+        }
+        if let Some(v) = self.toml_maps.get(lang).and_then(|m| m.get(key)) {
+            return Translation::new(v.clone());
+        }
+        if lang != self.fallback_lang {
+            if let Some(v) = self
+                .bundles
+                .get(&self.fallback_lang)
+                .and_then(|b| b.get(key))
+            {
+                return Translation::new(v);
+            }
+            if let Some(v) = self
+                .toml_maps
+                .get(&self.fallback_lang)
+                .and_then(|m| m.get(key))
+            {
+                return Translation::new(v.clone());
+            }
+        }
+        Translation::new(key.to_string())
+    }
+
+    /// Translate a key with named arguments for an explicit `lang`.
+    pub fn t_with_lang(&self, key: &str, lang: &str, args: &[(&str, &str)]) -> Translation {
+        if let Some(v) = self
+            .bundles
+            .get(lang)
+            .and_then(|b| b.get_with_args(key, args))
+        {
+            return Translation::new(v);
+        }
+        if let Some(template) = self.toml_maps.get(lang).and_then(|m| m.get(key)) {
+            return Translation::new(apply_args(template, args));
+        }
+        if lang != self.fallback_lang {
+            if let Some(v) = self
+                .bundles
+                .get(&self.fallback_lang)
+                .and_then(|b| b.get_with_args(key, args))
+            {
+                return Translation::new(v);
+            }
+            if let Some(template) = self
+                .toml_maps
+                .get(&self.fallback_lang)
+                .and_then(|m| m.get(key))
+            {
+                return Translation::new(apply_args(template, args));
+            }
+        }
+        Translation::new(key.to_string())
+    }
+
     /// Return `true` if the active language bundle contains `key`.
     pub fn has(&self, key: &str) -> bool {
         self.bundles

@@ -1,0 +1,22 @@
+[meta]
+id            = "fs-i18n"
+name          = "FreeSynergy i18n Service"
+resource_type = "program"
+description   = "Fluent-based internationalization service — translate keys, hotplug FTL files, pull language packs from OCI artifacts."
+version       = "0.1.0"
+author        = "FreeSynergy"
+license       = "MIT"
+icon          = "assets/icon.svg"
+tags          = ["i18n", "l10n", "fluent", "translation", "language", "localization"]
+
+[service]
+grpc_port = 50052
+rest_port = 8082
+image     = "ghcr.io/freesynergy/fs-i18n:latest"
+
+[volumes]
+locales = "/var/lib/freesynergy/i18n"
+
+[env]
+FS_I18N_LOCALES_DIR = "/var/lib/freesynergy/i18n/locales"
+FS_I18N_LANG        = "en"

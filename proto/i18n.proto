@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package fs_i18n;
+
+// i18n service — translate keys, query available languages, hotplug FTL files,
+// pull language pack artifacts from an OCI registry.
+service I18nService {
+    // Translate a key (with optional variable arguments) into the requested language.
+    rpc Translate (TranslateRequest) returns (TranslateResponse);
+
+    // List all languages currently loaded in the service.
+    rpc AvailableLanguages (AvailableLanguagesRequest) returns (AvailableLanguagesResponse);
+
+    // Reload FTL bundles from disk (hot-reload after a file change or artifact install).
+    rpc Reload (ReloadRequest) returns (ReloadResponse);
+
+    // Pull a language pack OCI artifact and install it into the locales directory.
+    rpc PullArtifact (PullArtifactRequest) returns (PullArtifactResponse);
+}
+
+// ── Translate ─────────────────────────────────────────────────────────────────
+
+message TranslateArg {
+    string key   = 1;
+    string value = 2;
+}
+
+message TranslateRequest {
+    // FTL message key, e.g. "action-save" or "actions.save".
+    string key  = 1;
+    // BCP-47 language code, e.g. "de", "ar".  Falls back to "en" when not found.
+    string lang = 2;
+    // Named variable substitutions for Fluent patterns (e.g. { $item }).
+    repeated TranslateArg args = 3;
+    // Optional: restrict lookup to a specific package's FTL namespace.
+    // Leave empty for the global namespace.
+    string package_id = 4;
+}
+
+message TranslateResponse {
+    // Resolved translated text, or the key itself when not found.
+    string text = 1;
+}
+
+// ── AvailableLanguages ────────────────────────────────────────────────────────
+
+message AvailableLanguagesRequest {}
+
+message LanguageInfo {
+    string code        = 1; // BCP-47 code, e.g. "de"
+    string name        = 2; // English name, e.g. "German"
+    string native_name = 3; // Native name, e.g. "Deutsch"
+    bool   rtl         = 4; // true for right-to-left scripts
+    string family      = 5; // Language family, e.g. "Indo-European"
+    string continent   = 6; // Continent, e.g. "Europe"
+}
+
+message AvailableLanguagesResponse {
+    repeated LanguageInfo languages = 1;
+}
+
+// ── Reload ────────────────────────────────────────────────────────────────────
+
+message ReloadRequest {
+    // Optional: only reload bundles for this language code.
+    // Leave empty to reload all loaded languages.
+    string lang = 1;
+}
+
+message ReloadResponse {
+    bool   ok      = 1;
+    string message = 2;
+}
+
+// ── PullArtifact ──────────────────────────────────────────────────────────────
+
+message PullArtifactRequest {
+    // BCP-47 language code to install, e.g. "fr".
+    string lang   = 1;
+    // OCI image reference for the language pack artifact,
+    // e.g. "ghcr.io/freesynergy/fs-i18n-fr:latest".
+    string source = 2;
+}
+
+message PullArtifactResponse {
+    bool   ok      = 1;
+    string message = 2;
+}

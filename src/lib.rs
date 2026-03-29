@@ -30,6 +30,7 @@ pub mod languages;
 pub mod locale;
 pub mod macros;
 pub mod provider;
+pub mod service;
 pub mod snippets;
 pub mod tools;
 
