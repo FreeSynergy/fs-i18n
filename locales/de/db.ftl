@@ -14,6 +14,10 @@ db-error-connection-failed = Verbindung zur Datenbank fehlgeschlagen: { $url }
 db-error-migration-failed = Migration fehlgeschlagen: { $reason }
 db-error-query-failed = Abfrage fehlgeschlagen: { $reason }
 db-error-engine-not-found = Keine Datenbank-Engine registriert.
+db-error-health-failed = Gesundheitscheck fehlgeschlagen: { $reason }
+
+db-engine-postgres-name = PostgreSQL
+db-engine-sqlite-name = SQLite
 db-error-already-connected = Datenbank ist bereits verbunden.
 db-error-not-connected = Datenbank ist nicht verbunden.
 
