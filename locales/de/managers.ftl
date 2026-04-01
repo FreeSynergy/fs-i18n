@@ -60,6 +60,27 @@ managers-cursor-no-sets = Keine Cursor-Sets gefunden.
 # Sprach-Manager
 managers-language-title = Sprach-Manager
 managers-language-not-found = Sprache nicht gefunden.
+managers-language-section-list = Sprachen
+managers-language-section-active = Aktiv
+managers-language-section-download = Herunterladen
+managers-language-section-preview = Vorschau
+
+# Cursor-Manager Sektionen
+managers-cursor-section-list = Cursor-Sets
+managers-cursor-section-active = Aktives Set
+managers-cursor-section-preview = Slot-Vorschau
+
+# Theme-Manager Sektionen
+managers-theme-section-list = Themes
+managers-theme-section-active = Aktives Theme
+
+# Icons-Manager Sektionen
+managers-icons-section-list = Icon-Sets
+managers-icons-section-active = Aktives Set
+
+# Container-Manager Sektionen
+managers-container-section-list = Container-Apps
+managers-container-section-active = Laufend
 
 # Gesundheit
 managers-health-no-checks = Keine Health-Checks definiert.
