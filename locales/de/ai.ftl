@@ -16,6 +16,11 @@ ai-mistral-btn-refresh = Aktualisieren
 ai-mistral-ram-info = RAM nach ISQ Q4K: ~{ $ram } GB  ·  Port: { $port }
 ai-mistral-binary-missing = Binary nicht gefunden — installieren mit: fsn store install mistral
 
+# Engine-Status (generisch)
+ai-status-stopped = Gestoppt
+ai-start-engine = Engine starten
+ai-stop-engine = Engine stoppen
+
 # Editor-Integration
 ai-editor-integration-title = Editor-Integration
 ai-error = Fehler

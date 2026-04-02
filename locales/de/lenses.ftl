@@ -3,6 +3,7 @@
 lenses-title = FS Lenses
 lenses-search-placeholder = Suchen…
 lenses-no-results = Keine Ergebnisse gefunden.
+lenses-search-btn = Suchen
 
 # Eingebaute Lenses
 lenses-lens-wiki = Wiki: Suchergebnisse für '{ $query }'
