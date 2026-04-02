@@ -49,3 +49,17 @@ tasks-doc-my = My Doc
 
 # Pipeline editor
 tasks-pipeline-title = Pipeline Editor
+
+# Trigger labels (FTL keys)
+tasks-trigger-manual-label = Manual only
+tasks-trigger-on-event-label = On event: { $event }
+tasks-trigger-scheduled-label = Scheduled: { $cron }
+
+# Transform labels
+tasks-transform-direct = Direct copy
+tasks-transform-template = Template: { $template }
+tasks-transform-fixed = Fixed: { $value }
+
+# Status
+tasks-status-active = ● Active
+tasks-status-inactive = ○ Inactive

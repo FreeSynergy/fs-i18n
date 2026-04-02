@@ -49,3 +49,17 @@ tasks-doc-my = Mein Dokument
 
 # Pipeline-Editor
 tasks-pipeline-title = Pipeline-Editor
+
+# Trigger-Labels (FTL-Schlüssel)
+tasks-trigger-manual-label = Nur manuell
+tasks-trigger-on-event-label = Bei Ereignis: { $event }
+tasks-trigger-scheduled-label = Geplant: { $cron }
+
+# Transform-Labels
+tasks-transform-direct = Direkte Kopie
+tasks-transform-template = Vorlage: { $template }
+tasks-transform-fixed = Fest: { $value }
+
+# Status
+tasks-status-active = ● Aktiv
+tasks-status-inactive = ○ Inaktiv

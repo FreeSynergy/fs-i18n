@@ -57,3 +57,7 @@ bots-type-monitor = Monitor
 bots-form-label = Bezeichnung
 bots-form-description = Beschreibung (optional)
 bots-form-message = Nachricht
+
+# Status
+bots-status-enabled = Aktiviert
+bots-status-disabled = Deaktiviert
