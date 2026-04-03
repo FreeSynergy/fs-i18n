@@ -1,0 +1,121 @@
+# desktop.ftl — FreeSynergy Desktop Shell (Deutsch)
+
+# ── Shell menu ─────────────────────────────────────────────────────────────────
+shell-menu-about = Über FreeSynergy…
+shell-menu-quit = Beenden
+shell-menu-launcher = App-Starter
+shell-menu-view = Ansicht
+shell-menu-fullscreen = Vollbild
+shell-menu-services = Dienste
+shell-menu-tools = Werkzeuge
+shell-menu-help = Hilfe
+shell-menu-theme = Design
+shell-menu-rendering-mode = Darstellungsmodus
+shell-menu-open-container = Container öffnen
+shell-menu-start-all = Alle starten
+shell-menu-stop-all = Alle stoppen
+shell-menu-open-store = Store öffnen
+shell-menu-open-studio = Studio öffnen
+shell-menu-open-tasks = Aufgaben öffnen
+shell-menu-open-bots = Bots öffnen
+shell-menu-install-package = Paket installieren…
+shell-menu-documentation = Dokumentation
+shell-menu-report-bug = Fehler melden…
+shell-menu-keyboard-shortcuts = Tastenkürzel
+
+# ── Avatar menu ────────────────────────────────────────────────────────────────
+shell-avatar-profile = Profil
+shell-avatar-sign-out = Abmelden
+
+# ── Window controls ────────────────────────────────────────────────────────────
+shell-window-maximize = Maximieren
+shell-window-close = Schließen
+
+# ── Launcher ──────────────────────────────────────────────────────────────────
+shell-launcher-title = Starter
+shell-launcher-open = Starter öffnen
+shell-launcher-search-placeholder = Apps suchen…
+shell-launcher-no-apps = Keine Apps gefunden für „{ $query }"
+shell-launcher-page = Seite { $n } / { $total }
+
+# ── Notifications ──────────────────────────────────────────────────────────────
+shell-notifications-title = Benachrichtigungen
+shell-notifications-count = { $n } gesamt
+shell-notifications-empty = Keine Benachrichtigungen
+shell-notifications-dismiss = Schließen
+
+# ── Navigation ────────────────────────────────────────────────────────────────
+shell-nav-tasks = Aufgaben
+shell-nav-bots = Bots
+shell-nav-container = Container
+shell-nav-browser = Browser
+shell-nav-lenses = Linsen
+shell-nav-store = Store
+shell-nav-studio = Studio
+shell-nav-builder = Builder
+shell-nav-settings = Einstellungen
+shell-nav-profile = Profil
+shell-nav-ai-assistant = KI-Assistent
+shell-nav-help = Hilfe
+shell-nav-section-apps = Apps
+shell-nav-section-system = System
+shell-nav-managers = Manager
+shell-nav-manager-language = Sprache
+shell-nav-manager-theme = Design
+shell-nav-manager-icons = Symbole
+shell-nav-manager-container = Container-Apps
+shell-nav-manager-bots = Bots
+
+# ── Desktop widget bar ────────────────────────────────────────────────────────
+shell-desktop-edit = Desktop bearbeiten
+shell-desktop-add-widget = Widget hinzufügen
+shell-desktop-settings = Einstellungen
+shell-desktop-clear-all = Alle entfernen
+shell-desktop-done = Fertig
+
+# ── App / Home ────────────────────────────────────────────────────────────────
+shell-app-opening = Wird geöffnet…
+shell-home-hint = Nutze den Starter oder die Seitenleiste um eine App zu öffnen
+
+# ── Shell layout ──────────────────────────────────────────────────────────────
+shell-layout-topbar = Kopfleiste
+shell-layout-sidebar = Seitenleiste
+shell-layout-bottombar = Fußleiste
+shell-layout-main = Hauptbereich
+shell-layout-slot-top = Oben
+shell-layout-slot-fill = Füllen
+shell-layout-slot-bottom = Unten
+shell-layout-visible = Sichtbar
+shell-layout-hidden = Versteckt
+shell-layout-config-title = Desktop-Layout
+shell-layout-config-hint = Konfiguriere welche Shell-Bereiche sichtbar sind und welche Komponenten in welchem Slot erscheinen.
+shell-layout-pin-app = App anheften
+shell-layout-unpin-app = App lösen
+
+# ── Profile ───────────────────────────────────────────────────────────────────
+profile-title = Profil
+profile-btn-upload-photo = Foto hochladen
+profile-btn-add-key = + Schlüssel hinzufügen
+profile-btn-link-account = + Konto verknüpfen
+profile-btn-add-capability = + Fähigkeit hinzufügen
+profile-btn-save = Profil speichern
+profile-btn-connect = Verbinden
+profile-btn-verify = Verifizieren
+profile-label-display-name = Anzeigename
+profile-label-email = E-Mail
+profile-label-bio = Kurzbiografie
+profile-label-timezone = Zeitzone
+profile-label-key-label = Schlüsselbezeichnung
+profile-label-public-key = Öffentlicher Schlüssel
+profile-label-provider = Anbieter
+profile-label-subject = Subjekt
+profile-section-ssh-keys = SSH-Schlüssel
+profile-section-linked-accounts = Verknüpfte Konten
+profile-section-capabilities = Persönliche Fähigkeiten
+profile-msg-saved = Profil gespeichert.
+profile-msg-save-failed = Speichern fehlgeschlagen: { $error }
+profile-status-verified = Verifiziert
+profile-capability-messenger = Messenger-Konto
+profile-capability-task-manager = Aufgabenverwaltung
+profile-capability-mailbox = Postfach
+profile-capability-llm-assistant = KI-Sprachmodell

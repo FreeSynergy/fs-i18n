@@ -171,6 +171,9 @@ pub const BUILTIN_LOCALES: &[(&str, &str)] = &[
     // theme-app
     locale_ftl!("en", "theme-app.ftl"),
     locale_ftl!("de", "theme-app.ftl"),
+    // desktop shell (shell.*, profile.*)
+    locale_ftl!("en", "desktop.ftl"),
+    locale_ftl!("de", "desktop.ftl"),
 ];
 
 // ── Public API ────────────────────────────────────────────────────────────────
