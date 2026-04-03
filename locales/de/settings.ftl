@@ -8,6 +8,7 @@ settings-section-language = Sprache
 settings-section-roles = Dienstrollen
 settings-section-accounts = Konten
 settings-section-desktop = Desktop
+settings-section-layout = Desktop-Layout
 settings-section-browser = Browser
 settings-section-shortcuts = Tastenkürzel
 settings-section-packages = Pakete
