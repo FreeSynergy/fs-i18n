@@ -65,3 +65,27 @@ auth-wizard-error-skip-invalid-step = Skip is only available on the OIDC Clients
 
 auth-wizard-standalone-ready = Kanidm setup wizard ready (standalone mode).
 auth-wizard-standalone-hint = Run with --url to connect to a live Kanidm instance.
+
+# ── OIDC Client Manager (post-wizard) ─────────────────────────────────────────
+
+auth-manager-title = OIDC Client Manager
+auth-manager-nav-clients = Clients
+auth-manager-nav-sync = Sync Status
+
+auth-manager-clients-empty = No OIDC clients configured. Add a client to get started.
+auth-manager-client-id-label = Client ID
+auth-manager-client-name-label = Display Name
+auth-manager-client-redirect-label = Redirect URI
+auth-manager-pending-add = { $n } client(s) pending registration
+auth-manager-pending-remove = { $n } client(s) pending removal
+
+auth-manager-btn-add-client = Add Client
+auth-manager-btn-remove = Remove
+auth-manager-btn-sync = Sync to Kanidm
+
+auth-manager-sync-success = Sync complete — { $registered } registered, { $removed } removed.
+auth-manager-sync-partial = Sync completed with { $errors } error(s).
+auth-manager-sync-failed = Sync failed: { $reason }
+
+auth-manager-error-oidc-duplicate-id = A client with this ID already exists.
+auth-manager-error-oidc-not-found = No client with that ID found.
