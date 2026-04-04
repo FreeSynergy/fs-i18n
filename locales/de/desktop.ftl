@@ -119,3 +119,22 @@ profile-capability-messenger = Messenger-Konto
 profile-capability-task-manager = Aufgabenverwaltung
 profile-capability-mailbox = Postfach
 profile-capability-llm-assistant = KI-Sprachmodell
+
+# ── Sidebar state machine ─────────────────────────────────────────────────────
+sidebar-collapsed-hint = Hover zum Öffnen
+sidebar-pin-label = Sidebar offen halten
+sidebar-unpin-label = Sidebar lösen
+sidebar-position-left = Links
+sidebar-position-right = Rechts
+
+# ── Taskbar (linke Sidebar) ───────────────────────────────────────────────────
+taskbar-installed-section = Installiert
+taskbar-pinned-section = Angeheftet
+taskbar-settings-label = Einstellungen
+
+# ── Help-Sidebar (rechte Sidebar) ─────────────────────────────────────────────
+help-sidebar-title = Hilfe
+help-no-content = Keine Hilfe für diese Ansicht verfügbar.
+help-ai-placeholder = KI-Assistent fragen…
+help-ai-send = Senden
+help-ai-response-label = KI-Antwort

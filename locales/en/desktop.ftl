@@ -119,3 +119,22 @@ profile-capability-messenger = Messenger Account
 profile-capability-task-manager = Task Manager
 profile-capability-mailbox = Mailbox
 profile-capability-llm-assistant = LLM Assistant
+
+# ── Sidebar state machine ─────────────────────────────────────────────────────
+sidebar-collapsed-hint = Hover to expand
+sidebar-pin-label = Pin sidebar open
+sidebar-unpin-label = Unpin sidebar
+sidebar-position-left = Left
+sidebar-position-right = Right
+
+# ── Taskbar (left sidebar) ────────────────────────────────────────────────────
+taskbar-installed-section = Installed
+taskbar-pinned-section = Pinned
+taskbar-settings-label = Settings
+
+# ── Help sidebar (right sidebar) ──────────────────────────────────────────────
+help-sidebar-title = Help
+help-no-content = No help available for this view.
+help-ai-placeholder = Ask the AI assistant…
+help-ai-send = Send
+help-ai-response-label = AI response
