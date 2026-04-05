@@ -75,6 +75,9 @@ shell-desktop-done = Fertig
 
 # ── App / Home ────────────────────────────────────────────────────────────────
 shell-app-opening = Wird geöffnet…
+shell-app-launched = In einem eigenen Fenster gestartet.
+shell-app-relaunch = Erneut starten
+shell-app-not-found = { $app } ist nicht installiert. Öffne den Store, um es zu installieren.
 shell-home-hint = Nutze den Starter oder die Seitenleiste um eine App zu öffnen
 
 # ── Shell layout ──────────────────────────────────────────────────────────────
