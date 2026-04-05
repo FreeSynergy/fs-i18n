@@ -109,3 +109,18 @@ store-repos-title = Package Repositories
 store-repos-add = Add Repository
 store-repos-url-placeholder = Repository URL…
 store-repos-empty = No additional repositories configured.
+
+# Catalog completeness (5B.1)
+store-package-incomplete = Incomplete metadata
+store-issue-missing-description = Missing description
+store-issue-missing-icon = Missing icon
+store-issue-missing-tags = No tags
+store-issue-missing-license = Missing license
+store-issue-missing-homepage = Missing homepage
+store-issue-missing-screenshots = No screenshots
+
+# Browse tabs (5B.2)
+store-tab-updates = Updates ({ $count })
+store-tab-all-tags = All tags
+store-browse-no-updates = All packages are up to date.
+store-browse-update-count = { $count } update(s) available
