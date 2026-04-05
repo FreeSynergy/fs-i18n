@@ -65,6 +65,36 @@ inventory-info-up-to-date  = All packages are up to date.
 inventory-info-empty       = No resources installed.
 inventory-info-no-services = No services registered.
 
+# ── Caption + group labels (G1.4) ────────────────────────────────────────────
+
+inventory-caption-label        = Display name
+inventory-caption-placeholder  = e.g. wiki.team-a
+inventory-caption-hint         = Optional — leave blank to use the package id
+
+inventory-group-label          = Program group
+inventory-group-instances      = Instances
+inventory-group-parent         = Parent program
+inventory-group-add-instance   = Add instance
+inventory-group-icon-label     = Group icon
+
+# ── Program views (G1.4) ──────────────────────────────────────────────────────
+
+inventory-view-info              = Info
+inventory-view-manual            = Manual
+inventory-view-settings-config   = Settings
+inventory-view-settings-container = Container
+inventory-view-scope-own-machine  = Own machine
+inventory-view-scope-remote-server = Remote server
+
+inventory-info-uptime-label      = Uptime
+inventory-info-pids-label        = PIDs
+inventory-info-version-label     = Version
+inventory-info-action-kill       = Kill
+inventory-info-action-restart    = Restart
+inventory-info-action-update     = Update
+inventory-info-action-pause      = Pause
+inventory-info-critical-blocked  = Action requires administrator rights on this server.
+
 # ── CLI table headers ─────────────────────────────────────────────────────────
 
 inventory-cli-header-resources = ID                             VERSION      CHANNEL    STATUS
