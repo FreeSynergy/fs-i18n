@@ -46,6 +46,20 @@ nav-program-info-no-instances = Keine laufenden Instanzen
 nav-distribution-centered = Zentriert
 nav-distribution-spread = Zu den Rändern verteilen
 
+# ── Menü-Stil-Umschalter ────────────────────────────────────────────────────────
+nav-menu-style-label = Menü-Stil
+nav-menu-style-round = Rund
+nav-menu-style-sidebar = Sidebar
+
+# ── Sidebar-Panel ───────────────────────────────────────────────────────────────
+nav-sidebar-panel-label = Sidebar
+nav-sidebar-panel-toggle-open = Sidebar öffnen
+nav-sidebar-panel-toggle-close = Sidebar schließen
+nav-sidebar-panel-scroll-hint = Scrollen um mehr Einträge zu sehen
+
+# ── Scroll-Fallback ─────────────────────────────────────────────────────────────
+nav-scroll-more-items = Weitere Einträge — scrollen zum Anzeigen
+
 # ── Barrierefreiheit ────────────────────────────────────────────────────────────
 nav-indicator-corner-hint = { $corner } Menü-Indikator — klicken oder hover zum Aufklappen
 nav-indicator-side-hint = { $side } Menü-Indikator — klicken oder hover zum Aufklappen

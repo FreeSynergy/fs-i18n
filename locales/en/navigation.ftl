@@ -46,6 +46,20 @@ nav-program-info-no-instances = No running instances
 nav-distribution-centered = Centered
 nav-distribution-spread = Spread to edges
 
+# ── Menu style switcher ─────────────────────────────────────────────────────────
+nav-menu-style-label = Menu Style
+nav-menu-style-round = Round
+nav-menu-style-sidebar = Sidebar
+
+# ── Sidebar panel ───────────────────────────────────────────────────────────────
+nav-sidebar-panel-label = Sidebar
+nav-sidebar-panel-toggle-open = Open sidebar
+nav-sidebar-panel-toggle-close = Close sidebar
+nav-sidebar-panel-scroll-hint = Scroll to see more items
+
+# ── Scroll fallback ─────────────────────────────────────────────────────────────
+nav-scroll-more-items = More items — scroll to reveal
+
 # ── Accessibility ───────────────────────────────────────────────────────────────
 nav-indicator-corner-hint = { $corner } menu indicator — click or hover to expand
 nav-indicator-side-hint = { $side } menu indicator — click or hover to expand
