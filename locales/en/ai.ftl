@@ -25,3 +25,11 @@ ai-stop-engine = Stop engine
 ai-editor-integration-title = Editor Integration
 ai-error = Error
 ai-error-detail = Error: { $error }
+
+
+# AiComponent (G1.7)
+ai-chat-desc = Chat interface for the AI assistant
+ai-chat-capability-unavailable = AI chat is not available. Install and start the AI engine via the Store.
+ai-chat-welcome = Hello! How can I help you?
+ai-chat-input-placeholder = Ask anything…
+ai-chat-send = Send

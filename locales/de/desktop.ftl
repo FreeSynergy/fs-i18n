@@ -141,3 +141,39 @@ help-no-content = Keine Hilfe für diese Ansicht verfügbar.
 help-ai-placeholder = KI-Assistent fragen…
 help-ai-send = Senden
 help-ai-response-label = KI-Antwort
+
+# ── Eckmenüs ──────────────────────────────────────────────────────────────────
+desktop-corner-tasks-launcher = Starter
+desktop-corner-tasks-store = Store
+desktop-corner-tasks-browser = Browser
+desktop-corner-tasks-bots = Bots
+desktop-corner-tasks-managers = Manager
+desktop-corner-tasks-ai = KI-Assistent
+desktop-corner-tasks-lenses = Linsen
+desktop-corner-tasks-tasks = Aufgaben
+desktop-corner-tasks-profile = Profil
+desktop-corner-settings-appearance = Erscheinungsbild
+desktop-corner-settings-language = Sprache
+desktop-corner-settings-desktop = Desktop-Einstellungen
+desktop-corner-help-general = Allgemeine Hilfe
+desktop-corner-help-focus = Fokus-Hilfe
+desktop-corner-help-docs = Dokumentation
+desktop-corner-ai-chat = KI-Chat
+desktop-corner-ai-suggest = KI-Vorschläge
+
+# ── Titelleisten-Erweiterungen ────────────────────────────────────────────────
+desktop-titlebar-tiling-toggle = Fenster anordnen
+desktop-titlebar-view-start = Start
+desktop-titlebar-view-info = Info
+desktop-titlebar-view-manual = Handbuch
+desktop-titlebar-view-settings = Einstellungen
+desktop-titlebar-view-container = Container
+
+# ── Erscheinungsbild-Einstellungen ────────────────────────────────────────────
+desktop-settings-icon-size = Symbolgröße
+desktop-settings-menu-style = Menüstil
+desktop-settings-menu-style-round = Rund (Eckmenüs)
+desktop-settings-menu-style-sidebar = Seitenleiste
+desktop-settings-wallpaper = Hintergrundbild
+desktop-settings-wallpaper-color = Einfarbig
+desktop-settings-wallpaper-default = Standard

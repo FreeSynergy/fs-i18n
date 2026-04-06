@@ -141,3 +141,39 @@ help-no-content = No help available for this view.
 help-ai-placeholder = Ask the AI assistant…
 help-ai-send = Send
 help-ai-response-label = AI response
+
+# ── Corner menus ──────────────────────────────────────────────────────────────
+desktop-corner-tasks-launcher = Launcher
+desktop-corner-tasks-store = Store
+desktop-corner-tasks-browser = Browser
+desktop-corner-tasks-bots = Bots
+desktop-corner-tasks-managers = Managers
+desktop-corner-tasks-ai = AI Assistant
+desktop-corner-tasks-lenses = Lenses
+desktop-corner-tasks-tasks = Tasks
+desktop-corner-tasks-profile = Profile
+desktop-corner-settings-appearance = Appearance
+desktop-corner-settings-language = Language
+desktop-corner-settings-desktop = Desktop Settings
+desktop-corner-help-general = General Help
+desktop-corner-help-focus = Focus Help
+desktop-corner-help-docs = Documentation
+desktop-corner-ai-chat = AI Chat
+desktop-corner-ai-suggest = AI Suggest
+
+# ── Titlebar extensions ───────────────────────────────────────────────────────
+desktop-titlebar-tiling-toggle = Tile Windows
+desktop-titlebar-view-start = Start
+desktop-titlebar-view-info = Info
+desktop-titlebar-view-manual = Manual
+desktop-titlebar-view-settings = Settings
+desktop-titlebar-view-container = Container
+
+# ── Appearance settings ───────────────────────────────────────────────────────
+desktop-settings-icon-size = Icon Size
+desktop-settings-menu-style = Menu Style
+desktop-settings-menu-style-round = Round (Corner Menus)
+desktop-settings-menu-style-sidebar = Sidebar Panel
+desktop-settings-wallpaper = Wallpaper
+desktop-settings-wallpaper-color = Solid Color
+desktop-settings-wallpaper-default = Default

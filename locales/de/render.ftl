@@ -46,3 +46,74 @@ component-system-info-name = Systeminfo
 component-system-info-desc = CPU-, Arbeitsspeicher- und Festplattennutzung
 component-notification-bell-name = Benachrichtigungen
 component-notification-bell-desc = Aktuelle Systemmeldungen
+
+## G1.7 — Content-Komponenten
+
+# GeneralHelpComponent
+component-general-help-name = Hilfe
+component-general-help-desc = Kontextsensitive Hilfe für die aktive Maske
+component-general-help-no-context = Wählen Sie eine Maske, um die Hilfe zu sehen.
+component-general-help-actions-label = Verfügbare Aktionen
+
+# FocusHelpComponent
+component-focus-help-name = Element-Hilfe
+component-focus-help-desc = Erklärt das aktuell fokussierte Eingabefeld
+component-focus-help-idle = Klicken Sie auf ein Eingabefeld, um die Hilfe zu sehen.
+component-focus-help-generic = Für dieses Element ist keine spezifische Hilfe verfügbar.
+
+# SettingsConfigComponent
+component-settings-config-name = Einstellungen
+component-settings-config-desc = Erscheinungsbild, Sprache und Tastaturkürzel konfigurieren
+
+## Einstellungs-Sektionen
+settings-section-appearance = Erscheinungsbild
+settings-section-language = Sprache
+settings-section-background = Hintergrund
+settings-section-shortcuts = Tastaturkürzel
+
+## Erscheinungsbild
+settings-appearance-icon-size = Icon-Größe
+settings-appearance-menu-style = Menü-Stil
+settings-appearance-menu-round = Rund
+settings-appearance-menu-sidebar = Seitenleiste
+
+## Sprache
+settings-language-active = Aktive Sprache
+settings-language-change = Sprache ändern…
+
+## Hintergrund
+settings-background-color = Volltonfarbe
+settings-background-image = Bild
+
+## Tastaturkürzel
+settings-shortcuts-hint = Klicken Sie auf ein Kürzel, um es neu zu belegen.
+settings-shortcuts-open-editor = Editor öffnen
+
+# SettingsContainerComponent
+component-settings-container-name = Container-Einstellungen
+component-settings-container-desc = Pod-YAML-Konfiguration für diesen Container-Dienst
+settings-container-restart-required = Neustart erforderlich
+settings-container-no-permission = Sie haben keine Berechtigung, diesen Container zu konfigurieren.
+settings-container-status-running = Läuft
+settings-container-status-stopped = Gestoppt
+settings-container-section-instance = Instanz
+settings-container-section-config = Konfiguration
+settings-container-section-danger = Gefahrenzone
+settings-container-action-start = Starten
+settings-container-action-stop = Stoppen
+settings-container-action-restart = Neu starten
+settings-container-action-edit-yaml = Pod-YAML bearbeiten
+settings-container-action-copy-instance = Instanz kopieren
+settings-container-action-delete = Instanz löschen
+
+# SearchComponent
+component-search-name = Suche
+component-search-desc = Schnellsuche über alle Programme und Daten
+search-input-placeholder = Suchen…
+search-filter-expand = Filter anzeigen ▾
+search-filter-collapse = Filter ausblenden ▴
+search-filter-section = Filter
+search-filter-all = Alle
+search-filter-cross-program = Alle Programme
+search-results-section = Ergebnisse
+search-no-results = Keine Ergebnisse gefunden.
