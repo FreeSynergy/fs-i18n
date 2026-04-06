@@ -177,3 +177,61 @@ desktop-settings-menu-style-sidebar = Seitenleiste
 desktop-settings-wallpaper = Hintergrundbild
 desktop-settings-wallpaper-color = Einfarbig
 desktop-settings-wallpaper-default = Standard
+
+# ── G1.9 — Layout-Modi ────────────────────────────────────────────────────────
+desktop-layout-mode-normal = Fenster
+desktop-layout-mode-tiling = Kacheln
+desktop-layout-mode-focus = Fokus
+desktop-layout-mode-focus-exit = Fokusmodus beenden
+
+# ── G1.9 — Schnellwechsel-Overlay ─────────────────────────────────────────────
+quick-switch-title = Fenster wechseln
+quick-switch-hint = Fenster anklicken zum Fokussieren
+quick-switch-empty = Keine Fenster geöffnet
+
+# ── G1.9 — Benachrichtigungscenter ────────────────────────────────────────────
+notification-center-title = Benachrichtigungen
+notification-center-empty = Keine Benachrichtigungen
+notification-center-mark-all-read = Alle als gelesen markieren
+
+# ── G1.9 — Benachrichtigungsstufen ────────────────────────────────────────────
+notification-level-info = Info
+notification-level-success = Erfolg
+notification-level-warning = Warnung
+notification-level-error = Fehler
+
+# ── G1.9 — Badges ────────────────────────────────────────────────────────────
+badge-unread = { $n } ungelesen
+badge-update-available = Update verfügbar
+badge-error = Fehler
+badge-running = Läuft
+
+# ── G1.9 — Fenster-Snap ───────────────────────────────────────────────────────
+window-snap-enabled = Snap: an
+window-snap-disabled = Snap: aus
+window-snap-toggle = Snap umschalten
+
+# ── G1.9 — Arbeitsbereichsprofile ────────────────────────────────────────────
+workspace-profiles-title = Arbeitsbereichsprofile
+workspace-profiles-save = Aktuelles Layout speichern
+profile-coding = Coding
+profile-writing = Schreiben
+profile-admin = Admin
+
+# ── G1.9 — Auto Dunkel/Hell ───────────────────────────────────────────────────
+auto-theme-enabled = Automatisches Thema: an
+auto-theme-disabled = Automatisches Thema: aus
+
+# ── G1.9 — Komponenten-Namen ─────────────────────────────────────────────────
+component-badged-icon-name = Symbol mit Badge
+component-badged-icon-desc = Programmsymbol mit Status-Badge-Overlay
+component-quick-switch-name = Schnellwechsel
+component-quick-switch-desc = Alt+Tab Fensterumschalter-Overlay
+component-notification-center-name = Benachrichtigungscenter
+component-notification-center-desc = Aggregierter Benachrichtigungsverlauf
+component-workspace-profiles-name = Arbeitsbereichsprofile
+component-workspace-profiles-desc = Desktop-Layout-Voreinstellungen speichern und wiederherstellen
+component-window-snap-name = Fenster-Snap
+component-window-snap-desc = Automatische Fensteranordnung im Raster
+component-layout-mode-name = Layout-Modus
+component-layout-mode-desc = Zwischen Normal, Kacheln und Fokus wechseln

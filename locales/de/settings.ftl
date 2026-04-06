@@ -181,3 +181,28 @@ settings-shortcuts-action-bots = Bots öffnen
 settings-shortcuts-action-help = Hilfe öffnen
 settings-shortcuts-action-shortcuts = Tastenkürzel
 settings-shortcuts-action-close = Fenster schließen
+
+# Allgemein
+settings-saved = Einstellungen gespeichert.
+settings-field-restart-required = Neustart erforderlich.
+settings-language-active = Aktive Sprache
+settings-language-builtin = eingebaut
+
+# Sprachüberschreibungen pro App
+settings-language-per-app-title = Sprache pro Programm
+settings-language-per-app-show = Sprache pro Programm konfigurieren…
+settings-language-per-app-hide = Ausblenden
+settings-language-per-app-id-placeholder = Programm-ID (z.B. fs-browser)
+settings-language-per-app-form-title = Überschreibung hinzufügen
+settings-language-per-app-add = Hinzufügen
+
+# Paket-Einstellungen
+settings-packages-title = Paket-Einstellungen
+settings-packages-empty = Keine konfigurierbaren Pakete installiert.
+settings-packages-search-placeholder = Pakete suchen…
+settings-packages-none-configured = Keine konfigurierbaren Einstellungen.
+settings-packages-select-hint = Paket auswählen.
+settings-packages-no-help = Kein Hilfetext vorhanden.
+
+# Dienstrollen
+settings-roles-no-providers = Keine Anbieter installiert

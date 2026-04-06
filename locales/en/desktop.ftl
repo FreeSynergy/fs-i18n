@@ -177,3 +177,61 @@ desktop-settings-menu-style-sidebar = Sidebar Panel
 desktop-settings-wallpaper = Wallpaper
 desktop-settings-wallpaper-color = Solid Color
 desktop-settings-wallpaper-default = Default
+
+# ── G1.9 — Layout modes ───────────────────────────────────────────────────────
+desktop-layout-mode-normal = Windows
+desktop-layout-mode-tiling = Tiling
+desktop-layout-mode-focus = Focus
+desktop-layout-mode-focus-exit = Exit Focus Mode
+
+# ── G1.9 — Quick Switch overlay ───────────────────────────────────────────────
+quick-switch-title = Switch Window
+quick-switch-hint = Click a window to focus it
+quick-switch-empty = No windows open
+
+# ── G1.9 — Notification Center ────────────────────────────────────────────────
+notification-center-title = Notifications
+notification-center-empty = No notifications
+notification-center-mark-all-read = Mark all read
+
+# ── G1.9 — Notification levels ────────────────────────────────────────────────
+notification-level-info = Info
+notification-level-success = Success
+notification-level-warning = Warning
+notification-level-error = Error
+
+# ── G1.9 — Badges ────────────────────────────────────────────────────────────
+badge-unread = { $n } unread
+badge-update-available = Update available
+badge-error = Error
+badge-running = Running
+
+# ── G1.9 — Window Snap ────────────────────────────────────────────────────────
+window-snap-enabled = Snap: on
+window-snap-disabled = Snap: off
+window-snap-toggle = Toggle Snap
+
+# ── G1.9 — Workspace Profiles ────────────────────────────────────────────────
+workspace-profiles-title = Workspace Profiles
+workspace-profiles-save = Save Current Layout
+profile-coding = Coding
+profile-writing = Writing
+profile-admin = Admin
+
+# ── G1.9 — Auto Dark/Light ───────────────────────────────────────────────────
+auto-theme-enabled = Auto theme: on
+auto-theme-disabled = Auto theme: off
+
+# ── G1.9 — Component names ───────────────────────────────────────────────────
+component-badged-icon-name = Icon with Badge
+component-badged-icon-desc = Program icon with status badge overlay
+component-quick-switch-name = Quick Switch
+component-quick-switch-desc = Alt+Tab window switcher overlay
+component-notification-center-name = Notification Center
+component-notification-center-desc = Aggregated notification history
+component-workspace-profiles-name = Workspace Profiles
+component-workspace-profiles-desc = Save and restore desktop layout presets
+component-window-snap-name = Window Snap
+component-window-snap-desc = Automatic window arrangement in a grid
+component-layout-mode-name = Layout Mode
+component-layout-mode-desc = Cycle between Normal, Tiling, and Focus modes
