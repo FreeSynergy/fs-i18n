@@ -123,4 +123,6 @@ store-issue-missing-screenshots = No screenshots
 store-tab-updates = Updates ({ $count })
 store-tab-all-tags = All tags
 store-browse-no-updates = All packages are up to date.
+store-featured = Featured
+store-install = Install
 store-browse-update-count = { $count } update(s) available

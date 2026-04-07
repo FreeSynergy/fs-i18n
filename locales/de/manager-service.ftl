@@ -33,3 +33,14 @@ manager-service-update-available = Update verfügbar: { $version }
 manager-service-no-services = Keine Dienste in dieser Kategorie installiert.
 manager-service-role-switched = Primärer Dienst gewechselt zu '{ $service }'.
 manager-service-role-switch-failed = Primärwechsel fehlgeschlagen: { $reason }
+
+## Manager-Aktionen
+manager-action-update-pod-config = Pod-Konfiguration aktualisieren
+manager-action-edit-config = Konfiguration bearbeiten
+manager-action-switch-role = Rolle wechseln
+manager-action-check-for-update = Nach Updates suchen
+manager-action-update-pod-config-ok = Pod-Konfiguration aktualisiert und neu gestartet.
+manager-action-edit-config-ok = Konfiguration angewendet.
+manager-action-switch-role-ok = Rolle auf '{ $capability }' gewechselt.
+manager-action-check-for-update-ok = Version { $version } ist verfügbar.
+manager-action-check-for-update-current = Bereits aktuell.

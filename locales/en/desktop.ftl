@@ -25,6 +25,8 @@ shell-menu-keyboard-shortcuts = Keyboard Shortcuts
 
 # ── Avatar menu ────────────────────────────────────────────────────────────────
 shell-avatar-profile = Profile
+shell-avatar-settings = Settings
+shell-avatar-signed-in = Signed in
 shell-avatar-sign-out = Sign out
 
 # ── Window controls ────────────────────────────────────────────────────────────
@@ -77,6 +79,7 @@ shell-desktop-done = Done
 shell-app-opening = Opening…
 shell-app-launched = { $app } is open.
 shell-app-active = Running in this desktop window.
+shell-app-profile-hint = Manage your identity, SSH keys and linked accounts.
 shell-app-relaunch = Reopen
 shell-app-not-found = { $app } is not installed. Open the Store to install it.
 shell-home-hint = Use the launcher or sidebar to open an app

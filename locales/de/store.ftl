@@ -60,4 +60,6 @@ store-issue-missing-screenshots = Keine Screenshots
 store-tab-updates = Updates ({ $count })
 store-tab-all-tags = Alle Tags
 store-browse-no-updates = Alle Pakete sind aktuell.
+store-featured = Empfohlen
+store-install = Installieren
 store-browse-update-count = { $count } Update(s) verfügbar
